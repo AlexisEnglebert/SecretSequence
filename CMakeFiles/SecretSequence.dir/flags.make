@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/src -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glfw/include -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glad/include
+CXX_INCLUDES = -I/usr/include/freetype2 -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/src -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glfw/include -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glad/include
 
-CXX_FLAGS = 
+CXX_FLAGS = -O2 -std=c++11
 

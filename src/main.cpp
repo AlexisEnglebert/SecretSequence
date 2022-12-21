@@ -6,10 +6,13 @@
 
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>
-
+#include <ft2build.h>
+#include FT_FREETYPE_H  
 
 typedef struct{
 	GLFWwindow* window; //store our window
+	FT_Library ft;
+	FT_Face face;
 }core_t;
 
 static core_t core;
@@ -43,7 +46,19 @@ unsigned int init_opengl(){
     return 1;
 }
 
+unsigned int init_freetype(){
 
+	if (FT_Init_FreeType(&core.ft)){
+    	std::cerr << "Failed to initialize Freetype" << std::endl;
+    	return -1;
+	}
+	if (FT_New_Face(core.ft, "fonts/arial.ttf", 0, &core.face)){
+	    std::cerr << "Failed to load arial font" << std::endl;  
+	    return -1;
+	}
+
+	return 1;
+}
 void Render(){
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -61,6 +76,7 @@ int main(int argc, char ** argv){
 	
 	create_window();
 	init_opengl();
+	init_freetype();
 
 	while (!glfwWindowShouldClose(core.window)) {
 		Render();

@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/src -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glad/include
+C_INCLUDES = -I/usr/include/freetype2 -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/src -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glad/include
 
 C_FLAGS = 
 

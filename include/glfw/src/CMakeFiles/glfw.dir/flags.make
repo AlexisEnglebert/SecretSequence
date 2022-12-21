@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/src -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glfw/include -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glfw/src
+C_INCLUDES = -I/usr/include/freetype2 -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/src -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glfw/include -I/home/alexis/Documents/dev/c++/HackTheBoxChallenge/SecretSequence/include/glfw/src
 
 C_FLAGS = -fPIC -Wall -std=gnu99
 

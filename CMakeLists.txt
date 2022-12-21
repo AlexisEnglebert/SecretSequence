@@ -1,13 +1,18 @@
 cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 project(SecretSequence)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+SET(CMAKE_CXX_FLAGS "-O2 -std=c++11")
 
 # OpenGL
 find_package(OpenGL REQUIRED)
 include_directories( ${OPENGL_INCLUDE_DIRS} )
 
+# Freetype
+find_package(Freetype REQUIRED)
+include_directories( ${FREETYPE_INCLUDE_DIRS} )
 
-set(LIBS glfw glad ${OPENGL_LIBRARIES}) # create LIBS var for all librairies
+
+set(LIBS glfw glad ${OPENGL_LIBRARIES} ${FREETYPE_LIBRARIES}) # create LIBS var for all librairies
 
 # add src files
 file(GLOB_RECURSE SOURCE_FILES 
@@ -38,8 +43,4 @@ add_subdirectory("${CMAKE_SOURCE_DIR}/include/glad/")
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 
 target_link_libraries(${PROJECT_NAME} ${LIBS})
-
-# add libraries
-#link_directories(${CMAKE_SOURCE_DIR}/lib)
-
 

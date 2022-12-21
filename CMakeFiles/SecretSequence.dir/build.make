@@ -96,6 +96,7 @@ SecretSequence: include/glfw/src/libglfw3.a
 SecretSequence: include/glad/libglad.a
 SecretSequence: /usr/lib/libGL.so
 SecretSequence: /usr/lib/libGLU.so
+SecretSequence: /usr/lib/libfreetype.so
 SecretSequence: /usr/lib/librt.a
 SecretSequence: /usr/lib/libm.so
 SecretSequence: /usr/lib/libX11.so
