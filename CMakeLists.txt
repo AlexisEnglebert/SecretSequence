@@ -4,14 +4,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 # OpenGL
 find_package(OpenGL REQUIRED)
-# GLM
-find_package(GLM REQUIRED)
-message(STATUS "GLM included at ${GLM_INCLUDE_DIR}")
-# GLFW
-find_package(GLFW3 REQUIRED)
-message(STATUS "Found GLFW3 in ${GLFW3_INCLUDE_DIR}")
+include_directories( ${OPENGL_INCLUDE_DIRS} )
 
-set(LIBS glfw3 opengl32) #save libaries in LIBS VENV
+
+set(LIBS glfw glad ${OPENGL_LIBRARIES}) # create LIBS var for all librairies
 
 # add src files
 file(GLOB_RECURSE SOURCE_FILES 
@@ -26,13 +22,24 @@ file(GLOB_RECURSE HEADER_FILES
 
 include_directories(
 	"${CMAKE_SOURCE_DIR}/src"
-	"${CMAKE_SOURCE_DIR}/include"
 )
+
+# disable GLFW demonstrations tools
+
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+
+add_subdirectory("${CMAKE_SOURCE_DIR}/include/glfw/")
+add_subdirectory("${CMAKE_SOURCE_DIR}/include/glad/")
+
+
+#add our executable
+add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
+
 target_link_libraries(${PROJECT_NAME} ${LIBS})
 
-
 # add libraries
-link_directories(${CMAKE_SOURCE_DIR}/lib)
+#link_directories(${CMAKE_SOURCE_DIR}/lib)
 
-#generate our executable
-add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
+
