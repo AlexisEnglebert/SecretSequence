@@ -16,10 +16,16 @@ jobs:
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v3
-
+    
+    - name : Install OpenGL
+      run : sudo apt-get install xorg-dev libglu1-mesa-dev libbsd-dev libzzip-dev 
+      ##sudo apt-get install libglu1-mesa-dev
+      ##sudo apt-get libgl1-mesa-dev
+      ##sudo apt-get install mesa-common-dev
+      
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
