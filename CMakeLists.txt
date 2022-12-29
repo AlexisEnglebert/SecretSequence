@@ -12,7 +12,7 @@ find_package(Freetype REQUIRED)
 include_directories( ${FREETYPE_INCLUDE_DIRS} )
 
 
-set(LIBS glfw glad ${OPENGL_LIBRARIES} ${FREETYPE_LIBRARIES}) # create LIBS var for all librairies
+set(LIBS glm glfw glad ${OPENGL_LIBRARIES} ${FREETYPE_LIBRARIES}) # create LIBS var for all librairies
 
 # add src files
 file(GLOB_RECURSE SOURCE_FILES 
@@ -37,6 +37,7 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_subdirectory("${CMAKE_SOURCE_DIR}/include/glfw/")
 add_subdirectory("${CMAKE_SOURCE_DIR}/include/glad/")
+add_subdirectory("${CMAKE_SOURCE_DIR}/include/glm/")
 
 
 #add our executable

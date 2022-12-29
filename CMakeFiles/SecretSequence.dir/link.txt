@@ -1,1 +1,0 @@
-/usr/bin/c++ -O2 -std=c++11 -rdynamic CMakeFiles/SecretSequence.dir/src/main.cpp.o -o SecretSequence  include/glfw/src/libglfw3.a include/glad/libglad.a -lGL -lGLU -lfreetype -Wl,-Bstatic -lrt -Wl,-Bdynamic -lm -ldl -lX11 

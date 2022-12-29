@@ -7,6 +7,9 @@
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>
 #include <ft2build.h>
+
+#include <font.h>
+
 #include FT_FREETYPE_H  
 
 typedef struct{
@@ -56,6 +59,7 @@ unsigned int init_freetype(){
 	    std::cerr << "Failed to load arial font" << std::endl;  
 	    return -1;
 	}
+	FT_Set_Pixel_Sizes(core.face, 0, 48);  
 
 	return 1;
 }
