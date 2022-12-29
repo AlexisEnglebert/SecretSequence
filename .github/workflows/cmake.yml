@@ -21,8 +21,8 @@ jobs:
     - uses: actions/checkout@v3
     
     - name : Install OpenGL
-      run : sudo apt-get install xorg-dev libglu1-mesa-dev libbsd-dev libzzip-dev 
-      ##sudo apt-get install libglu1-mesa-dev
+      #run : sudo apt-get install xorg-dev libglu1-mesa-dev libbsd-dev libzzip-dev 
+      run : sudo apt-get install libglu1-mesa-dev
       ##sudo apt-get libgl1-mesa-dev
       ##sudo apt-get install mesa-common-dev
       
