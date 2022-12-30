@@ -12,10 +12,6 @@
 
 #include FT_FREETYPE_H  
 
-erreur
-
-
-
 typedef struct{
 	GLFWwindow* window; //store our window
 	FT_Library ft;
